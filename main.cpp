@@ -5,6 +5,14 @@
 
 using namespace std;
 
+//Переменные,Константы,Структуры
+struct Street {
+    string Name;
+    int NumberStreet;
+    string Country;
+    string City;
+};
+
 int main()
 {   //Включение русского языка
     SetConsoleCP(1251);
@@ -12,15 +20,10 @@ int main()
     setlocale(LC_ALL,"Russian");
         int n=1;
 
-    //Переменные,Константы,Структуры
-    struct Streets {
-    string Name[20];
-    int NumberStreet[20];
-    string Country[20];
-    string City[20];
+
+    Street Streets[20];  //удалять одну из структур
 
 
-    }Street;
     int Size,NumberStruct,ExitStruct;
 
 
@@ -57,27 +60,27 @@ int main()
         wcout<<L" +                             Введите название "<<n<<L" Улицы                           +"<<endl;
         wcout<<L"  +                               Пример: Окружная                                        +"<<endl;
         wcout<<L"   + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +"<<endl;
-        cin>>Street.Name[i];
+        cin>>Streets[i].Name;
         wcout<<L"+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +"<<endl;
         wcout<<L" +                      Введите номер "<<n<<L" Улицы                                     +"<<endl;
         wcout<<L"  +                            Пример: 1 или 43                                           +"<<endl;
         wcout<<L"   + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +"<<endl;
-        while (!(cin >> Street.NumberStreet[i]) || (cin.peek() != '\n'))
+        while (!(cin >> Streets[i].NumberStreet) || (cin.peek() != '\n'))
         {
             cin.clear();
             while (cin.get() != '\n');
             cout << "Error!" << endl;
         }
         wcout<<L"+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +"<<endl;
-        wcout<<L" +                            Введите в каком городе расположена "<<n<<L"улица           +"<<endl;
+        wcout<<L" +                            Введите в каком городе расположена "<<n<<L" улица           +"<<endl;
         wcout<<L"  +                                         Пример: Хельсинки                             +"<<endl;
         wcout<<L"   + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +"<<endl;
-        cin>>Street.City[i];
+        cin>>Streets[i].City;
         wcout<<L"+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +"<<endl;
         wcout<<L" +                         Введите в какой стране находится "<<n<<L" улица               +"<<endl;
         wcout<<L"  +                            Пример: Дания                                              +"<<endl;
         wcout<<L"   + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +"<<endl;
-        cin>>Street.Country[i];
+        cin>>Streets[i].Country;
 
         n=n+1;
      }
@@ -93,13 +96,13 @@ int main()
     //--NumberStruct;
     if(NumberStruct>0){
     wcout<<L"Название "<<NumberStruct<<L" Улицы =";
-    cout<<Street.Name[NumberStruct-1]<<endl;
+    cout<<Streets[NumberStruct-1].Name<<endl;
     wcout<<L"Номер "<<NumberStruct<<L" Улицы =";
-    cout<<Street.NumberStreet[NumberStruct-1]<<endl;
+    cout<<Streets[NumberStruct-1].NumberStreet<<endl;
     wcout<<L"Страна "<<NumberStruct<<L" Улицы =";
-    cout<<Street.Country[NumberStruct-1]<<endl;
+    cout<<Streets[NumberStruct-1].Country<<endl;
     wcout<<L"Город "<<NumberStruct<<L" Улицы =";
-    cout<<Street.City[NumberStruct-1]<<endl;
+    cout<<Streets[NumberStruct-1].City<<endl;
 
     }
     }while(ExitStruct!=0);
